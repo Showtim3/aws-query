@@ -10,7 +10,7 @@ const imageIds = [];
 
 const getImagesFromAmis = () => {
     console.log(imageIds.join(''));
-    const awsCliCommand = describeImagesQuery + imageIds.join('');
+    const awsCliCommand = describeImagesQuery + imageIds.join(' ');
     exec(awsCliCommand, (error, stdout, stderr) => {
         if (error) {
             console.log(`error2: ${error.message}`);
