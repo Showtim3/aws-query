@@ -32,7 +32,7 @@ const extractImageIds = () => {
     const imgIdStrings = sqlOutput.match(pattern)
     for(let id in imgIdStrings) {
         if(imgIdStrings[id].length >= 38) {
-            imageIds.push(`"` + imgIdStrings[id].slice(imgIdStrings[id].indexOf("ami"), 32) + `"`);
+            imageIds.push(`"` + imgIdStrings[id].slice(imgIdStrings[id].indexOf("ami"), 33) + `"`);
         }
     }
     getImagesFromAmis();
