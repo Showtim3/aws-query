@@ -21,6 +21,7 @@ const getImagesFromAmis = () => {
         }
         let data = JSON.stringify(stdout);
         console.log('This is the data that is being written:');
+        console.log(data);
         fs.writeFileSync('data.json', data);
     });
 
