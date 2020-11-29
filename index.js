@@ -9,7 +9,6 @@ let sqlOutput = null;
 const imageIds = [];
 
 const getImagesFromAmis = () => {
-    console.log(imageIds.join(''));
     const awsCliCommand = describeImagesQuery + imageIds.join(' ');
     exec(awsCliCommand, (error, stdout, stderr) => {
         if (error) {
@@ -20,9 +19,8 @@ const getImagesFromAmis = () => {
             console.log(`stderr: ${stderr}`);
             return;
         }
-        console.log('Ran successfully');
-        console.log(`stdout: ${stdout}`);
         let data = JSON.stringify(stdout);
+        console.log('This is the data that is being written:');
         fs.writeFileSync('data.json', data);
     });
 
@@ -48,8 +46,6 @@ const main = () => {
             console.log(`stderr: ${stderr}`);
             return;
         }
-        console.log('Ran successfully');
-        console.log(`stdout: ${stdout}`);
         sqlOutput = stdout;
         extractImageIds();
     });
