@@ -19,10 +19,10 @@ const getImagesFromAmis = () => {
             console.log(`stderr: ${stderr}`);
             return;
         }
-        let data = JSON.stringify(stdout);
+        // let data = JSON.stringify(stdout);
         console.log('This is the data that is being written:');
-        console.log(data);
-        fs.writeFileSync('data.json', data);
+        console.log(stdout);
+        fs.writeFileSync('data.json', stdout);
     });
 
 }
